@@ -53,6 +53,26 @@ console.log('2. Adding profile image...');
 const htmlPath = join(rootDir, DIST_DIR, 'index.html');
 let html = readFileSync(htmlPath, 'utf-8');
 
+// Inject dark theme CSS overrides
+const darkThemeCSS = `
+  <style>
+    :root {
+      --primaryColor: #e0e0e0;
+      --secondaryColor: #a0a0a0;
+      --accentColor: #c0392b;
+      --linkColor: #2ecc71;
+      --mutedColor: #2d2d2d;
+    }
+    body {
+      background-color: #1a1a1a;
+    }
+    article {
+      background-color: #1a1a1a;
+    }
+  </style>
+`;
+html = html.replace('</head>', `${darkThemeCSS}</head>`);
+
 // Inject profile image if specified in resume.json
 if (resume.basics?.image) {
   // Find the header content and wrap it in a flex container with image on left
