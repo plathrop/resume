@@ -26,6 +26,19 @@
   },
   "work": [
     {
+      "name": "Torc Robotics",
+      "position": "Senior Software Engineer",
+      "url": "https://torc.ai",
+      "startDate": "2025-05",
+      "summary": "Senior Engineer on the Simulation Services team, responsible for Kubernetes infrastructure supporting autonomous vehicle simulation.",
+      "highlights": [
+        "Manage 500-node Kubernetes cluster running Torc's simulation infrastructure",
+        "Improved operational uptime from 90% to 99%",
+        "Achieved ~$30k/month (~22%) AWS cost savings through optimization",
+        "Mentor engineers on infrastructure and operational best practices"
+      ]
+    },
+    {
       "name": "MuleSoft (Salesforce)",
       "position": "Software Engineering Architect",
       "url": "https://www.mulesoft.com",
