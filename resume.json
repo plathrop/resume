@@ -1,0 +1,152 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Grey Lathrop",
+    "label": "Principal Engineer / Systems Architect",
+    "image": "assets/robot.png",
+    "email": "grey@ember.st",
+    "url": "https://grey.ember.st",
+    "summary": "Software and Systems Architect with 20+ years of experience designing, scaling, and optimizing distributed cloud-native systems on AWS. Proven success achieving 99.99% uptime, multi-million-dollar cost savings, and leading architectural transformations for organizations of 150+ engineers. Combines deep expertise in AWS, Kubernetes, Terraform, and reliability engineering with broad software development experience in Python, Rust, and Scala. Recognized for mentoring senior engineers and translating complex technical challenges into scalable, business-aligned solutions.",
+    "location": {
+      "city": "Remote",
+      "region": "USA"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "plathrop",
+        "url": "https://github.com/plathrop"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "greylathrop",
+        "url": "https://www.linkedin.com/in/greylathrop/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "MuleSoft (Salesforce)",
+      "position": "Software Engineering Architect",
+      "url": "https://www.mulesoft.com",
+      "startDate": "2021-08",
+      "endDate": "2024-09",
+      "summary": "Led architecture for Production Engineering division (180+ engineers), driving operational uplift and modernization initiatives.",
+      "highlights": [
+        "Directed multi-year migration of MuleSoft Control Plane from self-managed Kubernetes to AWS EKS with zero downtime, improving post-migration uptime to 99.99%",
+        "Drove adoption of safe change practices and blue/green deployment",
+        "Executed hands-on uplift of an understaffed Tier-0 service team under deadline pressure",
+        "Led migration from New Relic to Salesforce internal monitoring platforms across production environments",
+        "Identified and documented multiple opportunities for multi-million dollar cost savings"
+      ]
+    },
+    {
+      "name": "Spectrum Labs",
+      "position": "Senior Architect",
+      "url": "https://www.spectrumlabsai.com",
+      "startDate": "2020-06",
+      "endDate": "2021-08",
+      "summary": "Designed and deployed distributed data processing systems using Spark, Argo, and Kubernetes.",
+      "highlights": [
+        "Developed Terraform modules codifying best practices for EKS autoscaling and node termination",
+        "Reviewed major code changes for ML pipelines, improving performance and maintainability",
+        "Improved ingestion performance for on-prem ML classifiers by several orders of magnitude"
+      ]
+    },
+    {
+      "name": "Salesforce",
+      "position": "Software Engineering Architect / PMTS / LMTS",
+      "url": "https://www.salesforce.com",
+      "startDate": "2016-11",
+      "endDate": "2020-06",
+      "summary": "Led architecture and implementation of deep observability systems for the Heroku platform.",
+      "highlights": [
+        "Guided hybrid deployment models emphasizing cloud coherence and shared tooling",
+        "Led development of system for automated provisioning of trusted AWS accounts with verifiable security properties for use across Salesforce",
+        "Introduced Embedded Platform Engineering model to unify platform and product teams",
+        "Executed lossless migration of data collection architecture handling hundreds of thousands req/s",
+        "Led transition from legacy CI to new CI/CD platforms with zero data loss"
+      ]
+    },
+    {
+      "name": "Krux Digital",
+      "position": "Platform Architect / Sr. Infrastructure Engineer",
+      "url": "https://www.salesforce.com/products/data-cloud",
+      "startDate": "2012-03",
+      "endDate": "2016-11",
+      "summary": "Achieved consistent AWS cost controls leading to logarithmic scaling of costs, providing a key differentiator contributing to $800Mn Salesforce acquisition.",
+      "highlights": [
+        "Architected reorganization of DevOps and Platform teams to support scale; introduced patterns adopted org-wide",
+        "Designed and deployed distributed web services in Scala + Play! handling 13k QPS in production",
+        "Scaled Kafka clusters 50% while reducing costs 11%",
+        "Re-architected Java and Python systems for 10x throughput using open-source components",
+        "Built real-time data collection and websockets services supporting 2k data points/sec per process"
+      ]
+    },
+    {
+      "name": "Various Companies",
+      "position": "Senior / Contract Systems Engineer",
+      "startDate": "2005-01",
+      "endDate": "2012-03",
+      "summary": "Senior and contract engineering roles at Lyft, Zicasso, Yammer, SimpleGeo, Digg, Kapor Enterprises, SquareTrade, and others.",
+      "highlights": [
+        "Built and automated infrastructure at scale using Puppet and FAI",
+        "Migrated config management systems (Chef to Puppet)",
+        "Introduced CI, incident response, monitoring automation, and multi-datacenter deployments"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Cloud & Infrastructure",
+      "level": "Expert",
+      "keywords": [
+        "AWS (EC2, S3, EKS, Kinesis, Lambda)",
+        "Cloud Cost Optimization",
+        "Event-driven Architecture",
+        "Terraform",
+        "Kubernetes",
+        "CI/CD Pipelines"
+      ]
+    },
+    {
+      "name": "Software Development",
+      "level": "Expert",
+      "keywords": [
+        "Rust",
+        "Python",
+        "Go",
+        "Scala",
+        "Java",
+        "Shell Scripting"
+      ]
+    },
+    {
+      "name": "Reliability & Observability",
+      "level": "Expert",
+      "keywords": [
+        "Observability",
+        "OpenTelemetry",
+        "SLOs",
+        "Monitoring",
+        "Logging"
+      ]
+    },
+    {
+      "name": "Leadership & Strategy",
+      "level": "Expert",
+      "keywords": [
+        "Technical Mentorship",
+        "Cross-functional Alignment",
+        "DevOps Culture",
+        "Communication"
+      ]
+    }
+  ],
+  "meta": {
+    "theme": "even",
+    "canonical": "https://grey.ember.st/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2026-01-01"
+  }
+}

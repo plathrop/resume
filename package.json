@@ -1,0 +1,24 @@
+{
+  "name": "grey-lathrop-resume",
+  "version": "1.0.0",
+  "description": "Grey Lathrop's resume built with JSON Resume",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "render": "resumed render resume.json -o dist/index.html -t jsonresume-theme-even",
+    "pdf": "resumed export resume.json -o dist/resume.pdf -t jsonresume-theme-even",
+    "validate": "resumed validate resume.json",
+    "dev": "npx serve dist"
+  },
+  "keywords": [
+    "resume",
+    "jsonresume"
+  ],
+  "author": "Grey Lathrop",
+  "license": "MIT",
+  "dependencies": {
+    "jsonresume-theme-even": "^0.6.0",
+    "resumed": "^6.1.0",
+    "yaml": "^2.7.0"
+  }
+}
