@@ -130,7 +130,10 @@ writeFileSync(join(rootDir, DIST_DIR, '.nojekyll'), '');
 // Step 7: Generate PDF (optional - may fail if Puppeteer/Chrome not available)
 console.log('7. Generating PDF...');
 try {
-  execSync(`npx resumed export ${RESUME_FILE} -o ${DIST_DIR}/resume.pdf -t ${THEME}`, {
+  // Use --no-sandbox in CI environments (GitHub Actions, etc.)
+  const isCI = process.env.CI === 'true';
+  const puppeteerArgs = isCI ? '--puppeteer-arg=--no-sandbox' : '';
+  execSync(`npx resumed export ${RESUME_FILE} -o ${DIST_DIR}/resume.pdf -t ${THEME} ${puppeteerArgs}`.trim(), {
     cwd: rootDir,
     stdio: 'inherit'
   });
