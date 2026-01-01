@@ -124,6 +124,9 @@ if (existsSync(cnamePath)) {
   console.log('6. Copied CNAME...');
 }
 
+// Step 6b: Create .nojekyll file (required for GitHub Pages to serve PDFs and other assets)
+writeFileSync(join(rootDir, DIST_DIR, '.nojekyll'), '');
+
 // Step 7: Generate PDF (optional - may fail if Puppeteer/Chrome not available)
 console.log('7. Generating PDF...');
 try {
