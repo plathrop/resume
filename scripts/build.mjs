@@ -48,36 +48,60 @@ try {
   process.exit(1);
 }
 
-// Step 2: Copy resume.json
-console.log('2. Copying resume.json...');
+// Step 2: Post-process HTML to add profile image
+console.log('2. Adding profile image...');
+const htmlPath = join(rootDir, DIST_DIR, 'index.html');
+let html = readFileSync(htmlPath, 'utf-8');
+
+// Inject profile image if specified in resume.json
+if (resume.basics?.image) {
+  const imageHtml = `
+    <img 
+      src="${resume.basics.image}" 
+      alt="${resume.basics.name}" 
+      class="profile-image"
+      style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 0.5em;"
+    >`;
+  
+  // Insert image before the h1 in the header
+  html = html.replace(
+    /<header class="masthead">\s*<h1>/,
+    `<header class="masthead">\n    ${imageHtml}\n    <h1>`
+  );
+  
+  writeFileSync(htmlPath, html);
+}
+
+// Step 3: Copy resume.json
+console.log('3. Copying resume.json...');
 writeFileSync(
   join(rootDir, DIST_DIR, 'resume.json'),
   JSON.stringify(resume, null, 2)
 );
 
-// Step 3: Generate YAML
-console.log('3. Generating resume.yaml...');
+// Step 4: Generate YAML
+console.log('4. Generating resume.yaml...');
 writeFileSync(
   join(rootDir, DIST_DIR, 'resume.yaml'),
   YAML.stringify(resume)
 );
 
-// Step 4: Copy assets
-console.log('4. Copying assets...');
+// Step 5: Copy assets
+console.log('5. Copying assets...');
 const assetsDir = join(rootDir, 'assets');
 if (existsSync(assetsDir)) {
   cpSync(assetsDir, join(rootDir, DIST_DIR, 'assets'), { recursive: true });
 }
 
-// Step 5: Copy CNAME if it exists
+// Step 6: Copy CNAME if it exists
 const cnamePath = join(rootDir, 'CNAME');
 if (existsSync(cnamePath)) {
   cpSync(cnamePath, join(rootDir, DIST_DIR, 'CNAME'));
-  console.log('5. Copied CNAME...');
+  console.log('6. Copied CNAME...');
 }
 
-// Step 6: Generate PDF (optional - may fail if Puppeteer/Chrome not available)
-console.log('6. Generating PDF...');
+// Step 7: Generate PDF (optional - may fail if Puppeteer/Chrome not available)
+console.log('7. Generating PDF...');
 try {
   execSync(`npx resumed export ${RESUME_FILE} -o ${DIST_DIR}/resume.pdf -t ${THEME}`, {
     cwd: rootDir,
