@@ -55,18 +55,22 @@ let html = readFileSync(htmlPath, 'utf-8');
 
 // Inject profile image if specified in resume.json
 if (resume.basics?.image) {
-  const imageHtml = `
-    <img 
-      src="${resume.basics.image}" 
-      alt="${resume.basics.name}" 
-      class="profile-image"
-      style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 0.5em;"
-    >`;
-  
-  // Insert image before the h1 in the header
+  // Find the header content and wrap it in a flex container with image on left
   html = html.replace(
-    /<header class="masthead">\s*<h1>/,
-    `<header class="masthead">\n    ${imageHtml}\n    <h1>`
+    /<header class="masthead">\s*<h1>([^<]*)<\/h1>\s*<h2>([^<]*)<\/h2>/,
+    `<header class="masthead">
+    <div style="display: flex; align-items: center; gap: 1em;">
+      <img 
+        src="${resume.basics.image}" 
+        alt="${resume.basics.name}" 
+        class="profile-image"
+        style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0;"
+      >
+      <div>
+        <h1>$1</h1>
+        <h2>$2</h2>
+      </div>
+    </div>`
   );
   
   writeFileSync(htmlPath, html);
