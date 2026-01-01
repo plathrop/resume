@@ -106,7 +106,10 @@
         "Event-driven Architecture",
         "Terraform",
         "Kubernetes",
-        "CI/CD Pipelines"
+        "CI/CD Pipelines",
+        "High Availability",
+        "Scalability",
+        "Virtualization"
       ]
     },
     {
@@ -118,7 +121,23 @@
         "Go",
         "Scala",
         "Java",
-        "Shell Scripting"
+        "Common Lisp",
+        "Ruby",
+        "Bash",
+        "Git"
+      ]
+    },
+    {
+      "name": "Systems & Operations",
+      "level": "Expert",
+      "keywords": [
+        "Linux System Administration",
+        "Distributed Systems",
+        "System Architecture",
+        "Puppet",
+        "Automation",
+        "DNS",
+        "Nagios"
       ]
     },
     {
@@ -139,14 +158,37 @@
         "Technical Mentorship",
         "Cross-functional Alignment",
         "DevOps Culture",
+        "Agile Methodologies",
         "Communication"
       ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Jeff Pierce, Independent Technical Consultant (formerly Spectrum Game Creations)",
+      "reference": "One of the best infrastructure engineers I've ever worked with, a fine coder as well, and someone who looks at a problem with all angles and has examined every argument before he presents a solution. I'm definitely a better engineer because I worked with him."
+    },
+    {
+      "name": "Ben Standefer, Founder & CEO",
+      "reference": "A true, trusted startup infrastructure guy. His great amount of experience leads him to be a good mentor. He's technically articulate, reliable in a production incident, and reasonable but passionate in decision-making. He takes ownership of what he builds and has a great ability to balance doing things the right way but within practical reason."
+    },
+    {
+      "name": "Joe Stump, Principal Engineer at Google (formerly SimpleGeo)",
+      "reference": "Has the depth of knowledge that only the most seasoned systems engineers possess. Automation, packaging, Puppet, AWS, cluster management, capacity planning, etc. are mundane tasks, which is why you'll find him regularly reaching beyond normal duties for other, more interesting, challenges. A systems engineer who can program, or a programmer who knows systems engineering inside and out."
+    },
+    {
+      "name": "James Downs, Software Engineering Architect at Salesforce",
+      "reference": "Always strives for improvement, and freely shares his experience and skills to the betterment of those around him."
+    },
+    {
+      "name": "Ron Gorodetzky, Co-Founder at GoodCTZN (formerly Digg)",
+      "reference": "An excellent systems engineer and any team would be lucky to have him on their side. He made countless contributions towards making our infrastructure more consistent and maintainable. He not only always got the job done, but also strove to avoid hacks and implement things the right way."
     }
   ],
   "meta": {
     "theme": "even",
     "canonical": "https://grey.ember.st/resume.json",
-    "version": "v1.0.0",
+    "version": "v1.1.0",
     "lastModified": "2026-01-01"
   }
 }
