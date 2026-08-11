@@ -1,0 +1,69 @@
+{
+    "name": "swe",
+    "description": "Staff Software Engineer",
+    "label": "Staff Software Engineer",
+    "summary": "Staff-level software engineer with 20+ years of experience building distributed systems in Python, Rust, Go, and Scala on AWS. Shipped production services handling 13k+ QPS, data architectures processing hundreds of thousands of requests per second, and a C++ gRPC bridge validating autonomous driving systems in simulation. Deep current practice in agentic AI: production agentic workflows for code review and documentation, LLM agent runtimes, and semantic memory systems. Brings SRE-grade operational rigor to software design.",
+    "work": {
+        "Torc Robotics": {
+            "highlights": [
+                "Architected and maintained a C++ gRPC bridge connecting the virtual driver stack to a vendor scenario engine, enabling simulated scenario validation of the autonomous driving system",
+                "Designed agentic AI workflows adopted team-wide: automated multi-model PR review, self-updating documentation via stacked PRs, and AI skills for production-readiness and observability review",
+                "Managed Torc's simulation infrastructure, built on AWS primitives and processing over 50k simulation scenarios daily",
+                "Improved operational uptime from 90% to 99%",
+                "Achieved ~$30k/month (~22%) AWS cost savings through optimization",
+                "Mentored engineers on infrastructure and operational best practices"
+            ]
+        },
+        "MuleSoft (Salesforce)": {
+            "highlights": [
+                "Embedded hands-on with the 3-engineer team behind a Tier-0 service depended on by all of MuleSoft, delivering a security and compliance uplift to corporate standards under deadline pressure",
+                "Directed multi-year migration of MuleSoft Control Plane from self-managed Kubernetes to AWS EKS with zero downtime, improving post-migration uptime to 99.99%",
+                "Drove adoption of safe change practices and blue/green deployment",
+                "Led technical development for an organization of ~80 engineers, directly mentoring 15-20 and guiding career growth across the org",
+                "Led migration from New Relic to Salesforce internal monitoring platforms across production environments",
+                "Identified and documented multiple opportunities for multi-million dollar cost savings"
+            ]
+        },
+        "Spectrum Labs": {
+            "highlights": [
+                "Reviewed major code changes for ML pipelines, improving performance and maintainability",
+                "Improved ingestion performance for on-prem ML classifiers by several orders of magnitude",
+                "Developed Terraform modules codifying best practices for EKS autoscaling and node termination"
+            ]
+        },
+        "Salesforce": {
+            "highlights": [
+                "Led development of system for automated provisioning of trusted AWS accounts with verifiable security properties for use across Salesforce",
+                "Executed lossless migration of data collection architecture handling hundreds of thousands req/s",
+                "Led transition from legacy CI to new CI/CD platforms with zero data loss",
+                "Introduced Embedded Platform Engineering model to unify platform and product teams",
+                "Guided hybrid deployment models emphasizing cloud coherence and shared tooling"
+            ]
+        },
+        "Krux Digital": {
+            "highlights": [
+                "Designed and deployed distributed web services in Scala + Play! handling 13k QPS in production",
+                "Re-architected Java and Python systems for 10x throughput using open-source components",
+                "Built real-time data collection and websockets services supporting 2k data points/sec per process",
+                "Scaled Kafka clusters 50% while reducing costs 11%",
+                "Architected reorganization of DevOps and Platform teams to support scale; introduced patterns adopted org-wide"
+            ]
+        },
+        "Various Companies": {}
+    },
+    "skills": [
+        "Software Development",
+        "AI & Agentic Systems",
+        "Cloud & Infrastructure",
+        "Systems & Operations",
+        "Reliability & Observability",
+        "Leadership & Strategy"
+    ],
+    "references": ["Rohit", "Joe Stump", "Jeff Pierce"],
+    "referencesAdd": [
+        {
+            "name": "Aditya Karumanchi, Simulation Engineer at Torc Robotics",
+            "reference": "Grey's years of experience shine through in their approach to problem-solving: a structured approach that is not only easy to review but instructive - clear documentation of the problem first, succinct description of the what, why, and how in each unit/module, and PRs that flow very well. Their approach is almost like a Software Engineering textbook case-study."
+        }
+    ]
+}
