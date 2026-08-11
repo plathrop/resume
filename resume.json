@@ -1,205 +1,258 @@
 {
-  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
-  "basics": {
-    "name": "Grey Lathrop",
-    "label": "Principal Engineer / Systems Architect",
-    "image": "assets/robot.png",
-    "email": "grey@ember.st",
-    "url": "https://grey.ember.st",
-    "summary": "Software and Systems Architect with 20+ years of experience designing, scaling, and optimizing distributed cloud-native systems on AWS. Proven success achieving 99.99% uptime, multi-million-dollar cost savings, and leading architectural transformations for organizations of 150+ engineers. Combines deep expertise in AWS, Kubernetes, Terraform, and reliability engineering with broad software development experience in Python, Rust, and Scala. Recognized for mentoring senior engineers and translating complex technical challenges into scalable, business-aligned solutions.",
-    "location": {
-      "city": "Remote",
-      "region": "USA"
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "basics": {
+        "name": "Grey Lathrop",
+        "label": "Principal SRE / Systems Architect",
+        "image": "assets/robot.png",
+        "email": "grey@ember.st",
+        "url": "https://grey.ember.st",
+        "summary": "Principal Site Reliability Engineer and Systems Architect with 20+ years of experience designing, scaling, and operating distributed cloud-native systems on AWS. Proven record of 99.99% uptime, multi-million-dollar cost savings, and architectural leadership for engineering organizations of up to 150+. Combines deep expertise in AWS, Kubernetes, Terraform, and reliability engineering with hands-on development in Python, Rust, and Go, including production agentic AI workflows for code review, documentation, and readiness assessment. Recognized for mentoring senior engineers and translating complex technical challenges into scalable, business-aligned solutions.",
+        "location": {
+            "city": "Remote",
+            "region": "USA"
+        },
+        "profiles": [
+            {
+                "network": "GitHub",
+                "username": "plathrop",
+                "url": "https://github.com/plathrop"
+            },
+            {
+                "network": "LinkedIn",
+                "username": "greylathrop",
+                "url": "https://www.linkedin.com/in/greylathrop/"
+            }
+        ]
     },
-    "profiles": [
-      {
-        "network": "GitHub",
-        "username": "plathrop",
-        "url": "https://github.com/plathrop"
-      },
-      {
-        "network": "LinkedIn",
-        "username": "greylathrop",
-        "url": "https://www.linkedin.com/in/greylathrop/"
-      }
-    ]
-  },
-  "work": [
-    {
-      "name": "Torc Robotics",
-      "position": "Senior Software Engineer",
-      "url": "https://torc.ai",
-      "startDate": "2025-05",
-      "summary": "Senior Engineer on the Simulation Services team, responsible for Kubernetes infrastructure supporting autonomous vehicle simulation.",
-      "highlights": [
-        "Manage 500-node Kubernetes cluster running Torc's simulation infrastructure",
-        "Improved operational uptime from 90% to 99%",
-        "Achieved ~$30k/month (~22%) AWS cost savings through optimization",
-        "Mentor engineers on infrastructure and operational best practices"
-      ]
-    },
-    {
-      "name": "MuleSoft (Salesforce)",
-      "position": "Software Engineering Architect",
-      "url": "https://www.mulesoft.com",
-      "startDate": "2021-08",
-      "endDate": "2024-09",
-      "summary": "Led architecture for Production Engineering division (180+ engineers), driving operational uplift and modernization initiatives.",
-      "highlights": [
-        "Directed multi-year migration of MuleSoft Control Plane from self-managed Kubernetes to AWS EKS with zero downtime, improving post-migration uptime to 99.99%",
-        "Drove adoption of safe change practices and blue/green deployment",
-        "Executed hands-on uplift of an understaffed Tier-0 service team under deadline pressure",
-        "Led migration from New Relic to Salesforce internal monitoring platforms across production environments",
-        "Identified and documented multiple opportunities for multi-million dollar cost savings"
-      ]
-    },
-    {
-      "name": "Spectrum Labs",
-      "position": "Senior Architect",
-      "url": "https://www.spectrumlabsai.com",
-      "startDate": "2020-06",
-      "endDate": "2021-08",
-      "summary": "Designed and deployed distributed data processing systems using Spark, Argo, and Kubernetes.",
-      "highlights": [
-        "Developed Terraform modules codifying best practices for EKS autoscaling and node termination",
-        "Reviewed major code changes for ML pipelines, improving performance and maintainability",
-        "Improved ingestion performance for on-prem ML classifiers by several orders of magnitude"
-      ]
-    },
-    {
-      "name": "Salesforce",
-      "position": "Software Engineering Architect / PMTS / LMTS",
-      "url": "https://www.salesforce.com",
-      "startDate": "2016-11",
-      "endDate": "2020-06",
-      "summary": "Led architecture and implementation of deep observability systems for the Heroku platform.",
-      "highlights": [
-        "Guided hybrid deployment models emphasizing cloud coherence and shared tooling",
-        "Led development of system for automated provisioning of trusted AWS accounts with verifiable security properties for use across Salesforce",
-        "Introduced Embedded Platform Engineering model to unify platform and product teams",
-        "Executed lossless migration of data collection architecture handling hundreds of thousands req/s",
-        "Led transition from legacy CI to new CI/CD platforms with zero data loss"
-      ]
-    },
-    {
-      "name": "Krux Digital",
-      "position": "Platform Architect / Sr. Infrastructure Engineer",
-      "url": "https://www.salesforce.com/products/data-cloud",
-      "startDate": "2012-03",
-      "endDate": "2016-11",
-      "summary": "Achieved consistent AWS cost controls leading to logarithmic scaling of costs, providing a key differentiator contributing to $800Mn Salesforce acquisition.",
-      "highlights": [
-        "Architected reorganization of DevOps and Platform teams to support scale; introduced patterns adopted org-wide",
-        "Designed and deployed distributed web services in Scala + Play! handling 13k QPS in production",
-        "Scaled Kafka clusters 50% while reducing costs 11%",
-        "Re-architected Java and Python systems for 10x throughput using open-source components",
-        "Built real-time data collection and websockets services supporting 2k data points/sec per process"
-      ]
-    },
-    {
-      "name": "Various Companies",
-      "position": "Senior / Contract Systems Engineer",
-      "startDate": "2005-01",
-      "endDate": "2012-03",
-      "summary": "Senior and contract engineering roles at Lyft, Zicasso, Yammer, SimpleGeo, Digg, Kapor Enterprises, SquareTrade, and others.",
-      "highlights": [
-        "Built and automated infrastructure at scale using Puppet and FAI",
-        "Migrated config management systems (Chef to Puppet)",
-        "Introduced CI, incident response, monitoring automation, and multi-datacenter deployments"
-      ]
+    "work": [
+        {
+            "name": "Torc Robotics",
+            "position": "Senior Software Engineer",
+            "url": "https://torc.ai",
+            "startDate": "2025-05",
+            "endDate": "2026-07",
+            "summary": "Senior Engineer on an 8-engineer Simulation Services team, responsible for simulation infrastructure and validation tooling supporting autonomous truck testing.",
+            "highlights": [
+                "Managed Torc's simulation infrastructure, built on AWS primitives and processing over 50k simulation scenarios daily",
+                "Improved operational uptime from 90% to 99%",
+                "Achieved ~$30k/month (~22%) AWS cost savings through optimization",
+                "Architected and maintained a C++ gRPC bridge connecting the virtual driver stack to a vendor scenario engine, enabling simulated scenario validation of the autonomous driving system",
+                "Designed agentic AI workflows adopted team-wide: automated multi-model PR review, self-updating documentation via stacked PRs, and AI skills for production-readiness and observability review",
+                "Mentored engineers on infrastructure and operational best practices"
+            ]
+        },
+        {
+            "name": "MuleSoft (Salesforce)",
+            "position": "Software Engineering Architect",
+            "url": "https://www.mulesoft.com",
+            "startDate": "2021-08",
+            "endDate": "2024-09",
+            "summary": "Led architecture for Production Engineering division (180+ engineers), driving operational uplift and modernization initiatives.",
+            "highlights": [
+                "Directed multi-year migration of MuleSoft Control Plane from self-managed Kubernetes to AWS EKS with zero downtime, improving post-migration uptime to 99.99%",
+                "Drove adoption of safe change practices and blue/green deployment",
+                "Embedded hands-on with the 3-engineer team behind a Tier-0 service depended on by all of MuleSoft, delivering a security and compliance uplift to corporate standards under deadline pressure",
+                "Led technical development for an organization of ~80 engineers, directly mentoring 15-20 and guiding career growth across the org",
+                "Led migration from New Relic to Salesforce internal monitoring platforms across production environments",
+                "Identified and documented multiple opportunities for multi-million dollar cost savings"
+            ]
+        },
+        {
+            "name": "Spectrum Labs",
+            "position": "Senior Architect",
+            "url": "https://www.spectrumlabsai.com",
+            "startDate": "2020-06",
+            "endDate": "2021-08",
+            "summary": "Designed and deployed distributed data processing systems using Spark, Argo, and Kubernetes.",
+            "highlights": [
+                "Developed Terraform modules codifying best practices for EKS autoscaling and node termination",
+                "Reviewed major code changes for ML pipelines, improving performance and maintainability",
+                "Improved ingestion performance for on-prem ML classifiers by several orders of magnitude"
+            ]
+        },
+        {
+            "name": "Salesforce",
+            "position": "Software Engineering Architect / PMTS / LMTS",
+            "url": "https://www.salesforce.com",
+            "startDate": "2016-11",
+            "endDate": "2020-06",
+            "summary": "Led architecture and implementation of deep observability systems for the Heroku platform.",
+            "highlights": [
+                "Guided hybrid deployment models emphasizing cloud coherence and shared tooling",
+                "Led development of system for automated provisioning of trusted AWS accounts with verifiable security properties for use across Salesforce",
+                "Introduced Embedded Platform Engineering model to unify platform and product teams",
+                "Executed lossless migration of data collection architecture handling hundreds of thousands req/s",
+                "Led transition from legacy CI to new CI/CD platforms with zero data loss"
+            ]
+        },
+        {
+            "name": "Krux Digital",
+            "position": "Platform Architect / Sr. Infrastructure Engineer",
+            "url": "https://www.salesforce.com/products/data-cloud",
+            "startDate": "2012-03",
+            "endDate": "2016-11",
+            "summary": "Achieved consistent AWS cost controls leading to logarithmic scaling of costs, providing a key differentiator contributing to $800Mn Salesforce acquisition.",
+            "highlights": [
+                "Architected reorganization of DevOps and Platform teams to support scale; introduced patterns adopted org-wide",
+                "Designed and deployed distributed web services in Scala + Play! handling 13k QPS in production",
+                "Scaled Kafka clusters 50% while reducing costs 11%",
+                "Re-architected Java and Python systems for 10x throughput using open-source components",
+                "Built real-time data collection and websockets services supporting 2k data points/sec per process"
+            ]
+        },
+        {
+            "name": "Various Companies",
+            "position": "Senior / Contract Systems Engineer",
+            "startDate": "2005-01",
+            "endDate": "2012-03",
+            "summary": "Senior and contract engineering roles at Lyft, Zicasso, Yammer, SimpleGeo, Digg, Kapor Enterprises, SquareTrade, and others.",
+            "highlights": [
+                "Built and automated infrastructure at scale using Puppet and FAI",
+                "Migrated config management systems (Chef to Puppet)",
+                "Introduced CI, incident response, monitoring automation, and multi-datacenter deployments"
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "name": "Leadership & Strategy",
+            "level": "Expert",
+            "keywords": [
+                "Technical Mentorship",
+                "Cross-functional Alignment",
+                "DevOps Culture",
+                "Agile Methodologies",
+                "Communication"
+            ]
+        },
+        {
+            "name": "Cloud & Infrastructure",
+            "level": "Expert",
+            "keywords": [
+                "AWS (EC2, S3, EKS, Kinesis, Lambda)",
+                "Cloud Cost Optimization",
+                "Event-driven Architecture",
+                "Terraform",
+                "Kubernetes",
+                "gRPC",
+                "Simulation Infrastructure",
+                "CI/CD Pipelines",
+                "High Availability",
+                "Scalability",
+                "Virtualization"
+            ]
+        },
+        {
+            "name": "Reliability & Observability",
+            "level": "Expert",
+            "keywords": [
+                "Observability",
+                "OpenTelemetry",
+                "SLOs",
+                "Monitoring",
+                "Logging"
+            ]
+        },
+        {
+            "name": "AI & Agentic Systems",
+            "level": "Expert",
+            "keywords": [
+                "Agentic Workflow Design",
+                "LLM Agent Runtimes & Tooling",
+                "AI Skills Authoring",
+                "Embeddings & Semantic Search",
+                "AI-Assisted Development"
+            ]
+        },
+        {
+            "name": "Systems & Operations",
+            "level": "Expert",
+            "keywords": [
+                "Linux System Administration",
+                "Distributed Systems",
+                "System Architecture",
+                "Puppet",
+                "Automation",
+                "DNS"
+            ]
+        },
+        {
+            "name": "Software Development",
+            "level": "Expert",
+            "keywords": [
+                "Python",
+                "Rust",
+                "Go",
+                "Scala",
+                "Java",
+                "Common Lisp",
+                "Bash",
+                "Git"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "Palimpsest",
+            "description": "Long-term semantic memory system for LLM agents: chunking, embeddings, and retrieval over persistent agent memory",
+            "keywords": [
+                "Python",
+                "sentence-transformers",
+                "Semantic Search",
+                "LLM Agents"
+            ]
+        },
+        {
+            "name": "Hearth",
+            "description": "Persistent agentic runtime: identity-as-context system prompts, message routing, scheduled heartbeat, and custom context compaction",
+            "keywords": ["TypeScript", "Agentic Runtimes", "LLM Tooling"]
+        },
+        {
+            "name": "gwl-systems",
+            "description": "Spec-first inventory and automation for self-hosted infrastructure, turning desired state into auditable, idempotent changes",
+            "keywords": [
+                "Infrastructure Automation",
+                "Idempotency",
+                "Spec-driven Operations"
+            ]
+        },
+        {
+            "name": "gwl-agent-skills",
+            "description": "Open collection of agent skills, including a parallel multi-model code-review pipeline with conflict resolution and feedback triage",
+            "url": "https://github.com/plathrop/gwl-agent-skills",
+            "keywords": ["AI Skills", "Multi-model Review"]
+        }
+    ],
+    "references": [
+        {
+            "name": "Rohit Mishra, Software Engineer II at Torc Robotics",
+            "reference": "He doesn't skim for surface-level issues: he traces through actual execution paths and failure modes end-to-end, and never flags a problem without also bringing a concrete fix. His reviews caught subtle bugs that would only have surfaced under real production load. He's been genuinely generous with his time and judgment as a mentor."
+        },
+        {
+            "name": "Josh Lynn, Senior Engineering Manager at Torc Robotics",
+            "reference": "An exceptional software developer and architect with a rare combination of technical acumen and high-level emotional intelligence. He consistently navigates the complexities of modern engineering while keeping the human element at the forefront of every decision."
+        },
+        {
+            "name": "Yathartha Tuladhar, Technical Product Manager at Torc Robotics",
+            "reference": "A highly skilled software engineer and architect with a deep understanding of cloud orchestration workflows. He thrives in ambiguous, cross-functional environments, bringing structure and clarity to complex problems - particularly strong at articulating trade-offs and identifying risks early."
+        },
+        {
+            "name": "Joe Stump, Principal Engineer at Google",
+            "reference": "Has the depth of knowledge that only the most seasoned systems engineers possess. Automation, packaging, Puppet, AWS, cluster management, capacity planning, etc. are mundane tasks, which is why you'll find him regularly reaching beyond normal duties for other, more interesting, challenges. A systems engineer who can program, or a programmer who knows systems engineering inside and out."
+        },
+        {
+            "name": "Ben Standefer, Founder & CEO",
+            "reference": "A true, trusted startup infrastructure guy. His great amount of experience leads him to be a good mentor. He's technically articulate, reliable in a production incident, and reasonable but passionate in decision-making. He takes ownership of what he builds and has a great ability to balance doing things the right way but within practical reason."
+        },
+        {
+            "name": "Jeff Pierce, Independent Technical Consultant",
+            "reference": "One of the best infrastructure engineers I've ever worked with, a fine coder as well, and someone who looks at a problem with all angles and has examined every argument before he presents a solution. I'm definitely a better engineer because I worked with him."
+        }
+    ],
+    "meta": {
+        "theme": "even",
+        "canonical": "https://grey.ember.st/resume.json",
+        "version": "v1.2.0",
+        "lastModified": "2026-08-11"
     }
-  ],
-  "skills": [
-    {
-      "name": "Leadership & Strategy",
-      "level": "Expert",
-      "keywords": [
-        "Technical Mentorship",
-        "Cross-functional Alignment",
-        "DevOps Culture",
-        "Agile Methodologies",
-        "Communication"
-      ]
-    },
-    {
-      "name": "Cloud & Infrastructure",
-      "level": "Expert",
-      "keywords": [
-        "AWS (EC2, S3, EKS, Kinesis, Lambda)",
-        "Cloud Cost Optimization",
-        "Event-driven Architecture",
-        "Terraform",
-        "Kubernetes",
-        "CI/CD Pipelines",
-        "High Availability",
-        "Scalability",
-        "Virtualization"
-      ]
-    },
-    {
-      "name": "Software Development",
-      "level": "Expert",
-      "keywords": [
-        "Rust",
-        "Python",
-        "Go",
-        "Scala",
-        "Java",
-        "Common Lisp",
-        "Bash",
-        "Git"
-      ]
-    },
-    {
-      "name": "Systems & Operations",
-      "level": "Expert",
-      "keywords": [
-        "Linux System Administration",
-        "Distributed Systems",
-        "System Architecture",
-        "Puppet",
-        "Automation",
-        "DNS"
-      ]
-    },
-    {
-      "name": "Reliability & Observability",
-      "level": "Expert",
-      "keywords": [
-        "Observability",
-        "OpenTelemetry",
-        "SLOs",
-        "Monitoring",
-        "Logging"
-      ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Ben Standefer, Founder & CEO",
-      "reference": "A true, trusted startup infrastructure guy. His great amount of experience leads him to be a good mentor. He's technically articulate, reliable in a production incident, and reasonable but passionate in decision-making. He takes ownership of what he builds and has a great ability to balance doing things the right way but within practical reason."
-    },
-    {
-      "name": "Joe Stump, Principal Engineer at Google (formerly SimpleGeo)",
-      "reference": "Has the depth of knowledge that only the most seasoned systems engineers possess. Automation, packaging, Puppet, AWS, cluster management, capacity planning, etc. are mundane tasks, which is why you'll find him regularly reaching beyond normal duties for other, more interesting, challenges. A systems engineer who can program, or a programmer who knows systems engineering inside and out."
-    },
-    {
-      "name": "James Downs, Software Engineering Architect at Salesforce",
-      "reference": "Always strives for improvement, and freely shares his experience and skills to the betterment of those around him."
-    },
-    {
-      "name": "Ron Gorodetzky, Co-Founder at GoodCTZN (formerly Digg)",
-      "reference": "An excellent systems engineer and any team would be lucky to have him on their side. He made countless contributions towards making our infrastructure more consistent and maintainable. He not only always got the job done, but also strove to avoid hacks and implement things the right way."
-    },
-    {
-      "name": "Jeff Pierce, Independent Technical Consultant (formerly Spectrum Game Creations)",
-      "reference": "One of the best infrastructure engineers I've ever worked with, a fine coder as well, and someone who looks at a problem with all angles and has examined every argument before he presents a solution. I'm definitely a better engineer because I worked with him."
-    }
-  ],
-  "meta": {
-    "theme": "even",
-    "canonical": "https://grey.ember.st/resume.json",
-    "version": "v1.1.0",
-    "lastModified": "2026-01-01"
-  }
 }
