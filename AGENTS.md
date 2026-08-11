@@ -93,6 +93,20 @@ Follow these when editing `resume.json` so the document stays consistent:
 - Don't remove schema-optional fields that the build depends on (`basics.image`, `basics.name`, `basics.label`).
 - Don't commit without `npm run validate` passing.
 
-## Views (Planned)
+## Views
 
-Customized framings of the resume (e.g. SRE-focused, architect-focused) will live in `views/` as filter/overlay files applied at build time. This section will be updated when that system lands.
+Customized framings of the resume live in `views/` as filter/overlay files (e.g. `sre.json`, `architect.json`, `swe.json`). The build emits each view at `dist/views/<name>/` (index.html, resume.json, resume.pdf, resume-ats.pdf) plus a `dist/views/index.html` directory page.
+
+### How views work
+
+- `resume.json` is the canonical **superset**; all prose lives there.
+- A view file **selects** content by exact text match and **overrides** `basics.label`/`basics.summary`. It never duplicates prose.
+- Selections are validated at build time: if an edit to `resume.json` invalidates a view selection (e.g. rewording a highlight), **the build fails** naming the culprits. Fix the view file in the same commit.
+- The full schema is documented in the header comment of `scripts/build.mjs`.
+
+### Editing rules for views
+
+- When rewording a highlight/skill/project/reference in `resume.json`, grep `views/` for the old string and update every match.
+- `referencesAdd` pulls from `references-archive.md` for references not in the canonical curated set.
+- Adding a view: create `views/<name>.json`, run `npm run build`, verify `dist/views/<name>/index.html`.
+- View summaries/labels follow the same writing conventions as canonical content.
