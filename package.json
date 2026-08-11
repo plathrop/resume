@@ -24,9 +24,14 @@
     "yaml": "^2.7.0"
   },
   "devDependencies": {
-    "puppeteer": "^23.11.1"
+    "puppeteer": "^24"
+  },
+  "overrides": {
+    "resume-cli": {
+      "puppeteer": "^24"
+    }
   },
   "allowScripts": {
-    "puppeteer@23.11.1": true
+    "puppeteer@24.43.1": true
   }
 }

@@ -66,7 +66,7 @@ Follow these when editing `resume.json` so the document stays consistent:
 
 ## Build System Quirks
 
-**Vendored themes**: both themes are vendored under `vendor/` (npm `file:` dependencies, symlinked into `node_modules`). Local fixes — keep these when upgrading:
+**Vendored themes**: both themes are vendored under `vendor/` (npm `file:` dependencies, symlinked into `node_modules`). Their `package.json` files are stripped to runtime `dependencies` only — npm installs `devDependencies` of `file:`-linked packages, which pulled eslint 7, request, and other abandoned packages into our tree. Don't re-add theme dev tooling. Local fixes — keep these when upgrading:
 
 `jsonresume-theme-even` (on top of upstream 0.6.1):
 
@@ -88,7 +88,7 @@ Note: the flat template loads Bootstrap 3.2 and Octicons from cdnjs at render ti
 
 1. **Dark theme injection**: CSS variable overrides are string-replaced into the rendered HTML before `</head>`. Depends on theme markup of `jsonresume-theme-even`.
 2. **Profile image injection**: a regex rewrites the `<header class="masthead">` block to add `basics.image` as a circular avatar. If `basics.name`/`label` rendering changes (theme upgrade), this regex may silently stop matching — verify the avatar appears after theme changes.
-3. **PDF in CI**: the workflow sets `CI=true`, and `build.mjs` translates that to `RESUME_PUPPETEER_NO_SANDBOX=true` for resume-cli's Puppeteer. The GitHub Actions runner requires the no-sandbox flag. `puppeteer` is a pinned devDependency (`^23`, matching resume-cli's bundled version) so `npx puppeteer browsers install chrome` installs the exact Chrome build resume-cli expects.
+3. **PDF in CI**: the workflow sets `CI=true`, and `build.mjs` translates that to `RESUME_PUPPETEER_NO_SANDBOX=true` for resume-cli's Puppeteer. The GitHub Actions runner requires the no-sandbox flag. `puppeteer` is a devDependency (`^24`) and `overrides` forces resume-cli's bundled puppeteer to the same major, so `npx puppeteer browsers install chrome` always installs the Chrome build resume-cli expects. If resume-cli's puppeteer usage ever breaks on a newer major, pin `overrides` back down and accept the npm deprecation warning.
 4. **`.nojekyll`** is generated into `dist/` — required for Pages to serve the PDF. Don't remove.
 
 ## What NOT to Do
