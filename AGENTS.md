@@ -78,6 +78,9 @@ Follow these when editing `resume.json` so the document stays consistent:
 1. `style.css`: Helvetica/Arial stack replaces the Lato web font (web fonts fail the ATS validator's font check).
 2. `index.js`: `modernize()` shims legacy schema fields — the theme predates JSON Resume v1 and reads `company`/`website` where the schema uses `name`/`url` (without this, company names silently vanish from the work section).
 3. `resume.template`: projects section added (upstream had none).
+4. `style.css`: section content columns use `margin-left` instead of Bootstrap floats — floats lose their offset when fragmented across a printed page break, snapping page 2+ content to the left margin.
+
+Note: the flat template loads Bootstrap 3.2 and Octicons from cdnjs at render time; PDF generation depends on the CDN being reachable (true in practice, but a silent failure mode worth knowing about).
 
 **Theme compatibility**: `resume-cli` only works with themes exporting a `render(resume)` function (Handlebars-era themes). The new official React themes from the jsonresume.org monorepo (e.g. `jsonresume-theme-professional` 1.x) ship raw JSX and will crash with `Unexpected token '<'` — do not install them without adding a transpile step.
 

@@ -170,3 +170,20 @@ h4 span:first-child {
 		display: none;
 	}
 }
+
+/* Page-break-safe two-column layout (local fix).
+   Bootstrap lays sections out with floats (aside.col-sm-3 + div.col-sm-9).
+   A float taller than one printed page loses its horizontal offset on
+   subsequent pages, snapping content to the left margin. Give the content
+   column a margin instead of a float: margins persist across page breaks.
+   Specificity beats Bootstrap's single-class rules; this theme's CSS is
+   inlined after the Bootstrap <link> in resume.template. */
+section.row > aside.col-sm-3 {
+	float: left;
+	width: 25%;
+}
+section.row > div.col-sm-9 {
+	float: none;
+	width: auto;
+	margin-left: 25%;
+}
