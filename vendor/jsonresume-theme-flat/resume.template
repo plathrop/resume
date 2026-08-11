@@ -404,6 +404,42 @@
 	</section>
 	{{/if}}
 	
+	{{#if resume.projects.length}}
+	<section id="projects" class="row">
+		<aside class="col-sm-3">
+			<h3>Projects</h3>
+		</aside>
+		<div class="col-sm-9">
+			<div class="row">
+			{{#each resume.projects}}
+			<div class="col-sm-12">
+				<h4 class="strike-through">
+					<span>{{name}}</span>
+				</h4>
+				{{#website}}
+				<div class="website pull-right">
+					<a href="{{.}}">{{.}}</a>
+				</div>
+				{{/website}}
+				{{#description}}
+				<div class="summary">
+					<p>{{.}}</p>
+				</div>
+				{{/description}}
+				{{#if keywords.length}}
+				<ul class="keywords">
+					{{#keywords}}
+					<li>{{.}}</li>
+					{{/keywords}}
+				</ul>
+				{{/if}}
+			</div>
+			{{/each}}
+			</div>
+		</div>
+	</section>
+	{{/if}}
+
 	{{#if resume.references.length}}
 	<section id="references" class="row">
 		<aside class="col-sm-3">
