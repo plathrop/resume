@@ -1,41 +1,41 @@
 {
-  "name": "architect",
-  "description": "Principal Systems Architect",
-  "label": "Principal Systems Architect",
-  "summary": "Systems Architect with 20+ years of experience leading architecture for distributed, cloud-native systems on AWS. Directed zero-downtime platform migrations and operational modernization for engineering organizations of up to 180, with a proven record of 99.99% uptime and multi-million-dollar cost savings. Combines architectural strategy with hands-on depth in Kubernetes, Terraform, AWS, and production agentic AI systems. Recognized for mentoring senior engineers and aligning complex technical decisions with business outcomes.",
-  "work": {
-    "Torc Robotics": {
-      "highlights": [
-        "Designed agentic AI workflows adopted team-wide: automated multi-model PR review, self-updating documentation via stacked PRs, and AI skills for production-readiness and observability review",
-        "Architected and maintained a C++ gRPC bridge connecting the virtual driver stack to a vendor scenario engine, enabling simulated scenario validation of the autonomous driving system",
-        "Managed Torc's simulation infrastructure, built on AWS primitives and processing over 50k simulation scenarios daily",
-        "Improved operational uptime from 90% to 99%",
-        "Achieved ~$30k/month (~22%) AWS cost savings through optimization",
-        "Mentored engineers on infrastructure and operational best practices"
-      ]
+    "name": "architect",
+    "description": "Principal Systems Architect",
+    "label": "Principal Systems Architect",
+    "summary": "Systems Architect with 20+ years of experience leading architecture for distributed, cloud-native systems on AWS. Directed zero-downtime platform migrations and operational modernization for engineering organizations of up to 150, with a proven record of 99.99% uptime and multi-million-dollar cost savings. Combines architectural strategy with hands-on depth in Kubernetes, Terraform, AWS, and production agentic AI systems. Recognized for mentoring senior engineers and aligning complex technical decisions with business outcomes.",
+    "work": {
+        "Torc Robotics": {
+            "highlights": [
+                "Designed agentic AI workflows adopted team-wide: automated multi-model PR review, self-updating documentation via stacked PRs, and AI skills for production-readiness and observability review",
+                "Architected and maintained a C++ gRPC bridge connecting the virtual driver stack to a vendor scenario engine, enabling simulated scenario validation of the autonomous driving system",
+                "Managed Torc's simulation infrastructure, built on AWS primitives and processing over 50k simulation scenarios daily",
+                "Improved operational uptime from 90% to 99%",
+                "Achieved ~$30k/month (~22%) AWS cost savings through optimization",
+                "Mentored engineers on infrastructure and operational best practices"
+            ]
+        },
+        "MuleSoft (Salesforce)": {
+            "highlights": [
+                "Directed multi-year migration of MuleSoft Control Plane from self-managed Kubernetes to AWS EKS with zero downtime, improving post-migration uptime to 99.99%",
+                "Identified and documented multiple opportunities for multi-million dollar cost savings",
+                "Embedded hands-on with the 3-engineer team behind a Tier-0 service depended on by all of MuleSoft, delivering a security and compliance uplift to corporate standards under deadline pressure",
+                "Led technical development for an organization of ~80 engineers, directly mentoring 15-20 and guiding career growth across the org",
+                "Drove adoption of safe change practices and blue/green deployment",
+                "Led migration from New Relic to Salesforce internal monitoring platforms across production environments"
+            ]
+        },
+        "Spectrum Labs": {},
+        "Salesforce": {},
+        "Krux Digital": {},
+        "Various Companies": {}
     },
-    "MuleSoft (Salesforce)": {
-      "highlights": [
-        "Directed multi-year migration of MuleSoft Control Plane from self-managed Kubernetes to AWS EKS with zero downtime, improving post-migration uptime to 99.99%",
-        "Identified and documented multiple opportunities for multi-million dollar cost savings",
-        "Embedded hands-on with the 3-engineer team behind a Tier-0 service depended on by all of MuleSoft, delivering a security and compliance uplift to corporate standards under deadline pressure",
-        "Led technical development for an organization of ~80 engineers, directly mentoring 15-20 and guiding career growth across the org",
-        "Drove adoption of safe change practices and blue/green deployment",
-        "Led migration from New Relic to Salesforce internal monitoring platforms across production environments"
-      ]
-    },
-    "Spectrum Labs": {},
-    "Salesforce": {},
-    "Krux Digital": {},
-    "Various Companies": {}
-  },
-  "skills": [
-    "Leadership & Strategy",
-    "Cloud & Infrastructure",
-    "AI & Agentic Systems",
-    "Systems & Operations",
-    "Reliability & Observability",
-    "Software Development"
-  ],
-  "references": ["Josh Lynn", "Yathartha", "Ben Standefer", "Joe Stump"]
+    "skills": [
+        "Leadership & Strategy",
+        "Cloud & Infrastructure",
+        "AI & Agentic Systems",
+        "Systems & Operations",
+        "Reliability & Observability",
+        "Software Development"
+    ],
+    "references": ["Josh Lynn", "Yathartha", "Ben Standefer", "Joe Stump"]
 }
