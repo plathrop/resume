@@ -23,13 +23,14 @@ dist/                # GENERATED. Never edit directly; never commit hand changes
 
 | Command | Purpose |
 |---|---|
-| `npm run validate` | Validate `resume.json` against the JSON Resume schema |
-| `npm run build` | Full build into `dist/` (HTML + JSON + YAML + PDF*) |
+| `npm run validate` | Validate `resume.json` against the JSON Resume schema (resume-cli) |
+| `npm run build` | Full build into `dist/` (HTML + JSON + YAML + PDF + ATS PDF + audit) |
 | `npm run render` | Render HTML only |
-| `npm run pdf` | Export PDF only |
+| `npm run pdf` | Export styled PDF only (even theme) |
+| `npm run audit` | Print ATS compatibility score (flat theme; goal: stay above 90) |
 | `npm run dev` | Serve `dist/` locally for review |
 
-\* PDF generation requires Puppeteer/Chrome. It may fail locally; CI installs Chrome and always generates the PDF. A local PDF failure is not a build blocker.
+\* PDF generation requires Chrome (via Puppeteer). After a fresh `npm install`, run `npm install-scripts approve puppeteer` — this npm blocks postinstall scripts by default. If Chrome extraction silently fails (known flakiness in the JS extractor), unzip the archives in `~/.cache/puppeteer/chrome*/` manually. CI does a clean `npx puppeteer browsers install chrome` and is unaffected.
 
 ## Standard Workflow for Content Changes
 
@@ -65,16 +66,24 @@ Follow these when editing `resume.json` so the document stays consistent:
 
 ## Build System Quirks
 
-**Vendored theme**: `jsonresume-theme-even` is vendored at `vendor/jsonresume-theme-even/` (npm `file:` dependency, symlinked into `node_modules`). Local fixes applied on top of upstream 0.6.1 — keep these when upgrading:
+**Vendored themes**: both themes are vendored under `vendor/` (npm `file:` dependencies, symlinked into `node_modules`). Local fixes — keep these when upgrading:
+
+`jsonresume-theme-even` (on top of upstream 0.6.1):
 
 1. `index.js`: `formatDate` parses `YYYY-MM[-DD]` as a local date (upstream parses as UTC midnight, rendering one month early in US timezones).
 2. `partials/projects.hbs`: only renders the date range when `startDate` is present (upstream renders "Invalid Date – Present" for undated projects).
+
+`jsonresume-theme-flat` (ATS PDF theme):
+
+1. `style.css`: Helvetica/Arial stack replaces the Lato web font (web fonts fail the ATS validator's font check).
+
+**Theme compatibility**: `resume-cli` only works with themes exporting a `render(resume)` function (Handlebars-era themes). The new official React themes from the jsonresume.org monorepo (e.g. `jsonresume-theme-professional` 1.x) ship raw JSX and will crash with `Unexpected token '<'` — do not install them without adding a transpile step.
 
 `scripts/build.mjs` does more than render — be careful when touching it:
 
 1. **Dark theme injection**: CSS variable overrides are string-replaced into the rendered HTML before `</head>`. Depends on theme markup of `jsonresume-theme-even`.
 2. **Profile image injection**: a regex rewrites the `<header class="masthead">` block to add `basics.image` as a circular avatar. If `basics.name`/`label` rendering changes (theme upgrade), this regex may silently stop matching — verify the avatar appears after theme changes.
-3. **PDF in CI**: CI sets `CI=true`, which adds `--puppeteer-arg=--no-sandbox`. Keep this; the GitHub Actions runner requires it.
+3. **PDF in CI**: the workflow sets `CI=true`, and `build.mjs` translates that to `RESUME_PUPPETEER_NO_SANDBOX=true` for resume-cli's Puppeteer. The GitHub Actions runner requires the no-sandbox flag. `puppeteer` is a pinned devDependency (`^23`, matching resume-cli's bundled version) so `npx puppeteer browsers install chrome` installs the exact Chrome build resume-cli expects.
 4. **`.nojekyll`** is generated into `dist/` — required for Pages to serve the PDF. Don't remove.
 
 ## What NOT to Do

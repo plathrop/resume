@@ -4,11 +4,14 @@
  * Build script for Grey Lathrop's resume
  * 
  * Generates:
- * - dist/index.html (rendered resume)
+ * - dist/index.html (rendered resume, 'even' theme with dark-mode injection)
  * - dist/resume.json (JSON Resume data)
  * - dist/resume.yaml (YAML version)
- * - dist/resume.pdf (PDF export)
+ * - dist/resume.pdf (PDF export, 'even' theme)
+ * - dist/resume-ats.pdf (ATS-friendly PDF, 'flat' theme)
  * - dist/assets/ (images, etc.)
+ *
+ * Uses resume-cli (`resume export/validate/audit`), not resumed.
  */
 
 import { execSync } from 'child_process';
@@ -22,7 +25,8 @@ const __dirname = dirname(__filename);
 const rootDir = join(__dirname, '..');
 
 // Configuration
-const THEME = 'jsonresume-theme-even';
+const THEME = 'even';
+const ATS_THEME = 'flat';
 const RESUME_FILE = 'resume.json';
 const DIST_DIR = 'dist';
 
@@ -39,7 +43,7 @@ const resume = JSON.parse(readFileSync(resumePath, 'utf-8'));
 // Step 1: Render HTML
 console.log('1. Rendering HTML...');
 try {
-  execSync(`npx resumed render ${RESUME_FILE} -o ${DIST_DIR}/index.html -t ${THEME}`, {
+  execSync(`npx resume export ${DIST_DIR}/index.html -t ${THEME} -r ${RESUME_FILE}`, {
     cwd: rootDir,
     stdio: 'inherit'
   });
@@ -127,24 +131,44 @@ if (existsSync(cnamePath)) {
 // Step 6b: Create .nojekyll file (required for GitHub Pages to serve PDFs and other assets)
 writeFileSync(join(rootDir, DIST_DIR, '.nojekyll'), '');
 
-// Step 7: Generate PDF (optional - may fail if Puppeteer/Chrome not available)
+// Step 7: Generate PDF (optional - may fail if Chrome is not available)
+// resume-cli honors RESUME_PUPPETEER_NO_SANDBOX for CI environments.
 console.log('7. Generating PDF...');
+const buildEnv = {
+  ...process.env,
+  ...(process.env.CI === 'true' ? { RESUME_PUPPETEER_NO_SANDBOX: 'true' } : {})
+};
 try {
-  // Use --no-sandbox in CI environments (GitHub Actions, etc.)
-  const isCI = process.env.CI === 'true';
-  const puppeteerArgs = isCI ? '--puppeteer-arg=--no-sandbox' : '';
-  execSync(`npx resumed export ${RESUME_FILE} -o ${DIST_DIR}/resume.pdf -t ${THEME} ${puppeteerArgs}`.trim(), {
+  execSync(`npx resume export ${DIST_DIR}/resume.pdf -t ${THEME} -r ${RESUME_FILE}`, {
     cwd: rootDir,
-    stdio: 'inherit'
+    stdio: 'inherit',
+    env: buildEnv
   });
 } catch (error) {
   console.warn('Warning: PDF generation failed (Puppeteer/Chrome may not be available)');
   console.warn('PDF will be generated in CI instead.');
 }
 
+// Step 8: Generate ATS-friendly PDF and print its audit score
+console.log('8. Generating ATS-friendly PDF...');
+try {
+  execSync(`npx resume export ${DIST_DIR}/resume-ats.pdf -t ${ATS_THEME} -r ${RESUME_FILE}`, {
+    cwd: rootDir,
+    stdio: 'inherit',
+    env: buildEnv
+  });
+  execSync(`npx resume audit ${RESUME_FILE} -t ${ATS_THEME}`, {
+    cwd: rootDir,
+    stdio: 'inherit'
+  });
+} catch (error) {
+  console.warn('Warning: ATS PDF generation or audit failed (Chrome may not be available)');
+}
+
 console.log('\nBuild complete! Output in dist/');
 console.log('  - index.html');
 console.log('  - resume.json');
 console.log('  - resume.yaml');
-console.log('  - resume.pdf (if Puppeteer available)');
+console.log('  - resume.pdf (if Chrome available)');
+console.log('  - resume-ats.pdf (if Chrome available)');
 console.log('  - assets/');
