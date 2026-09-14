@@ -38,7 +38,9 @@ dist/                # GENERATED. Never edit directly; never commit hand changes
 2. Bump `meta.lastModified` (YYYY-MM-DD) and `meta.version` (semver-ish, e.g. `v1.2.0`).
 3. Run `npm run validate` — must pass before committing.
 4. Run `npm run build` and eyeball `dist/index.html` (via `npm run dev`) for layout regressions, especially after touching `basics` (the header is custom-injected).
-5. Commit. Pushing to `main` triggers deployment.
+5. Commit. Pushing to `main` triggers deployment of the public site —
+   confirm with Grey before pushing (a live deploy is shared state, not
+   a trivial reversible change; local commits are fine to make freely).
 
 ## Content Conventions
 
